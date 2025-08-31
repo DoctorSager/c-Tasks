@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Запустить",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "Введите имя программы, например: ${workspaceFolder}/a.out",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/macbook/Desktop/cppSt",
+      "program": "/Users/macbook/Desktop/cppSt/build/Debug/outDebug"
+    }
+  ]
+}
