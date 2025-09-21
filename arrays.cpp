@@ -13,8 +13,11 @@ int main (){
     int minValue {array[0]};
     int maxValue {array[0]};
     int c {};
-    string str {""};
-
+    char str[]{};
+    char letters[]{'A','a','E','e','I','i','O','o','U','u','Y','y'};
+    int count{};
+    string isPal;
+    string word;
     
     do {
         cout << " "<< endl;
@@ -69,13 +72,28 @@ int main (){
                 
             case 4:
                 
-                cout << "Введите слово: ";
+                cout << "Введите слово (Английское): ";
                 cin >> str;
-                cout << "Слово: " << str << endl;
-              
+                for (int i{0}; i < (sizeof(letters) / sizeof(letters[0])) ; i++) {
+                    if (str[i]==letters[i]) {
+                        ++count;
+                    }
+                }
+                cout << count;
+                
                 break;
             case 5:
-                cout << "Ввод: ";
+                
+                cout << "Введите строку: ";
+                cin >> isPal;
+                for (int i = isPal.size() - 1; i>= 0  ; i--) {
+                    word = word + isPal[i];
+                }
+                if (isPal==word) {
+                    cout<< "Палиндром"<< endl;
+                }else {
+                    cout << "Не палиндром" << endl;
+                }
                 break;
             case 10:
                 flag = false;
