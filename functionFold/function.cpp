@@ -8,6 +8,7 @@ int factRev(int);
 void checkTwo(int);
 int gcd_recursive(int a, int b);
 int gcd_iterative (int a, int b);
+int fib_recursive (int maxNumber);
 
 
 
@@ -57,6 +58,10 @@ int main (){
                 cout << " "<< endl;
                 break;
             case 4:
+                cout << "Введите число: ";
+                cin >> userInput;
+                cout << "Рекурсивно: " << fib_recursive(userInput) << endl;
+                
                 
                 break;
             case 5:
@@ -122,4 +127,16 @@ int gcd_iterative (int a, int b){
         a = temp;
     }
     return a;
+}
+
+int fib_recursive (int maxNumber){
+    
+    if (maxNumber <= 0){
+        return 0;
+    }
+    else if (maxNumber == 1){
+        return 1;
+    }
+    return fib_recursive(maxNumber -1) + fib_recursive(maxNumber - 2);
+
 }
