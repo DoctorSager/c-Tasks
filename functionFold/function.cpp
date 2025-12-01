@@ -6,6 +6,9 @@ using namespace std;
 int fact(int);
 int factRev(int);
 void checkTwo(int);
+int gcd_recursive(int a, int b);
+int gcd_iterative (int a, int b);
+
 
 
 
@@ -17,6 +20,7 @@ int main (){
     bool flag {true};
     int userChoice;
     int userInput;
+    int userInput2;
     
     do {
         
@@ -44,7 +48,13 @@ int main (){
                 checkTwo(userInput);
                 break;
             case 3:
-                
+                cout << "Введите число А: ";
+                cin >> userInput;
+                cout << "Введите число Б: ";
+                cin >> userInput2;
+                cout<< "Рекурсивно НОД = " << gcd_recursive (userInput, userInput2) << endl;
+                cout<< "Итеративно НОД = " << gcd_iterative (userInput, userInput2);
+                cout << " "<< endl;
                 break;
             case 4:
                 
@@ -94,4 +104,22 @@ void checkTwo(int number){
     }
     
     
+}
+
+int gcd_recursive (int a, int b){
+    
+    if (b == 0) {
+        return a;
+    }
+    return gcd_recursive(b, a % b);
+}
+
+int gcd_iterative (int a, int b){
+    
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
 }
